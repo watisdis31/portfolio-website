@@ -181,7 +181,7 @@ const projects = [
     githubUrl: "https://github.com/watisdis31/fsjs-p1-pairprogram",
   },
   {
-    title: "Social Media Website",
+    title: "PendengarMu",
     desc: "Hacktiv8 Final Project where we made a web based application for people who is struggling with mental health, users can fill out the form we have and then based on the user's data, the app will recommend them lots of psychiatrist that cater to their problems.",
     image: "/projects/pendengarMu.png",
     imageRatio: "16 / 10",
