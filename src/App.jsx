@@ -19,7 +19,7 @@ const projects = [
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
-    techStack: ["JavaScript", "HTML", "CSS", "Boostrap", "Firebase"],
+    techStack: ["JavaScript", "HTML", "CSS", "Bootstrap", "Firebase"],
     keyFeatures: [
       "Pure Vanilla JS calculation engine for tax, service, and discounts.",
       "URL-based data encoding for instant sharing.",
@@ -36,7 +36,7 @@ const projects = [
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
-    techStack: ["JavaScript", "HTML", "CSS", "Boostrap", "Firebase"],
+    techStack: ["JavaScript", "HTML", "CSS", "Bootstrap", "Firebase"],
     keyFeatures: [
       "Firebase Authentication",
       "Tracks and compares your daily and monthly expenses and incomes",
@@ -53,7 +53,7 @@ const projects = [
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
-    techStack: ["JavaScript", "HTML", "CSS", "Boostrap", "Firebase"],
+    techStack: ["JavaScript", "HTML", "CSS", "Bootstrap", "Firebase"],
     keyFeatures: [
       "Firebase Authentication",
       "Avatar System: Click your avatar to upload an image",
@@ -64,7 +64,7 @@ const projects = [
   },
   {
     title: "Pokedex Database",
-    desc: "Hacktiv8 Project where I made Pokemon database using PokeAPI (a public REST API) and have team building features, meta build recommendation from AI for competitive team building. Website is not available because we've stopped the backend server.",
+    desc: "Hacktiv8 Project where I made a Pokemon database using PokeAPI (a public REST API) and have team building features, meta build recommendation from AI for competitive team building. Website is not available because we've stopped the backend server.",
     image: "/projects/no-photo.png",
     imageRatio: "16 / 10",
     imageFit: "contain",
@@ -99,7 +99,7 @@ const projects = [
   },
   {
     title: "UKEA E-commerce App",
-    desc: "Hacktiv8 Project about an e-commerce app for staffs to maintain stocks and sales. Website is not available because we've stopped the backend server.",
+    desc: "Hacktiv8 Project about an e-commerce app for staff to maintain stocks and sales. Website is not available because we've stopped the backend server.",
     image: "/projects/ukea.png",
     imageRatio: "16 / 10",
     imageFit: "contain",
@@ -136,7 +136,7 @@ const projects = [
   },
   {
     title: "Personal Indie Website",
-    desc: "A fun personal project for myself when I discovered people been trying to make their own personal indie website and bring back the Y2K era.",
+    desc: "A fun personal project for myself when I discovered people were trying to make their own personal indie website and bring back the Y2K era.",
     image: "/projects/indie-website.png",
     imageRatio: "16 / 10",
     imageFit: "contain",
@@ -157,7 +157,7 @@ const projects = [
   },
   {
     title: "Social Media Website",
-    desc: "Hacktiv8 Group Project where we made a social media app similar like X and facebook.",
+    desc: "Hacktiv8 Group Project where we made a social media app similar to X and facebook.",
     image: "/projects/kitabmuka.png",
     imageRatio: "16 / 10",
     imageFit: "contain",
@@ -182,7 +182,7 @@ const projects = [
   },
   {
     title: "PendengarMu",
-    desc: "Hacktiv8 Final Project where we made a web based application for people who is struggling with mental health, users can fill out the form we have and then based on the user's data, the app will recommend them lots of psychiatrist that cater to their problems.",
+    desc: "Hacktiv8 Final Project where we made a web based application for people who are struggling with mental health, users can fill out the form we have and then based on the user's data, the app will recommend to them lots of psychiatrists that cater to their problems. ",
     image: "/projects/pendengarMu.png",
     imageRatio: "16 / 10",
     imageFit: "contain",
@@ -390,7 +390,7 @@ export default function App() {
               style={{ "--reveal-delay": "80ms" }}
               className="mt-4 flex justify-center"
             >
-              <p className="w-full max-w-3xl text-center leading-relaxed text-black/70 whitespace-normal break-words">
+              <p className="w-full max-w-3xl text-center leading-relaxed text-black/70 whitespace-normal wrap-break-word">
                 Hacktiv8 graduate and transitioning into web development,
                 seeking junior or entry-level full-stack roles. Background in
                 operations and team leadership with hands-on project experience
@@ -489,7 +489,7 @@ export default function App() {
                   className="project-card flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
                 >
                   <div
-                    className="aspect-[16/10] w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100"
+                    className="aspect-16/10 w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100"
                     style={{ aspectRatio: project.imageRatio ?? "16 / 10" }}
                   >
                     <img
@@ -505,7 +505,7 @@ export default function App() {
                       {project.title}
                     </h3>
 
-                    <p className="mt-3 min-h-[88px] text-sm leading-relaxed text-black/70 whitespace-normal break-words">
+                    <p className="mt-3 min-h-22 text-sm leading-relaxed text-black/70 whitespace-normal wrap-break-word">
                       {project.desc}
                     </p>
 
@@ -529,7 +529,7 @@ export default function App() {
                       <p className="text-xs font-semibold uppercase tracking-wide text-black">
                         Key Features
                       </p>
-                      <ul className="mt-2 min-h-[72px] list-disc space-y-1 pl-5 text-xs text-black/70">
+                      <ul className="mt-2 min-h-18 list-disc space-y-1 pl-5 text-xs text-black/70">
                         {(project.keyFeatures ?? [])
                           .slice(0, 3)
                           .map((feature) => (
