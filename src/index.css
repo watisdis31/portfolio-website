@@ -189,6 +189,127 @@ code {
   transform: scale(1.03);
 }
 
+.btn-sweep {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.btn-sweep::before,
+.btn-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  transform: translateX(-110%);
+  transition:
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 220ms ease;
+}
+
+.btn-sweep::before {
+  background: rgba(255, 255, 255, 0.18);
+  opacity: 0.85;
+}
+
+.btn-sweep::after {
+  background: rgba(255, 255, 255, 0.1);
+  transition-delay: 70ms;
+}
+
+.btn-sweep:hover::before,
+.btn-sweep:hover::after {
+  transform: translateX(0);
+}
+
+.btn-sweep:hover {
+  transform: scaleX(1.03) scaleY(0.98);
+}
+
+.btn-sweep:active {
+  transform: scaleX(1.01) scaleY(0.99);
+}
+
+.btn-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition:
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.btn-link::before,
+.btn-link::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  transform: translateX(-110%);
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-link::before {
+  background: var(--btn-ripple-1);
+}
+
+.btn-link::after {
+  background: var(--btn-ripple-2);
+  transition-delay: 90ms;
+}
+
+.btn-link--light {
+  --btn-ripple-1: rgba(15, 23, 42, 0.05);
+  --btn-ripple-2: rgba(15, 23, 42, 0.1);
+}
+
+.btn-link--dark {
+  --btn-ripple-1: rgba(255, 255, 255, 0.16);
+  --btn-ripple-2: rgba(255, 255, 255, 0.28);
+}
+
+.btn-link:hover::before,
+.btn-link:hover::after {
+  transform: translateX(0);
+}
+
+.btn-link:hover {
+  transform: scaleX(1.03) scaleY(0.98);
+}
+
+.btn-link:active {
+  transform: scaleX(1.01) scaleY(0.99);
+}
+
+.btn-title {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-content {
+  position: relative;
+  z-index: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .header-reveal {
     animation: none;
@@ -211,5 +332,27 @@ code {
   .project-card:hover .project-image {
     transform: none;
     box-shadow: none;
+  }
+
+  .btn-sweep,
+  .btn-sweep::before,
+  .btn-sweep::after {
+    transition: none;
+  }
+
+  .btn-sweep:hover,
+  .btn-sweep:active {
+    transform: none;
+  }
+
+  .btn-link,
+  .btn-link::before,
+  .btn-link::after {
+    transition: none;
+  }
+
+  .btn-link:hover,
+  .btn-link:active {
+    transform: none;
   }
 }

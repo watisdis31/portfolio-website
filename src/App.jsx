@@ -4,18 +4,18 @@ import { closeMenu, toggleMenu } from "./features/ui/uiSlice";
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
+  { label: "About & Skills", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
 const projects = [
   {
-    title: "Easy Bill Calculator",
+    title: "Split Bill Calculator",
     desc: "A lightweight, no-nonsense web tool designed to eliminate the friction of splitting group bills. By encoding data directly into the URL, this app allows users to itemize orders, calculate taxes/discounts, and generate a unique, sharable link.",
     image: "/projects/split-bill.png",
     imageRatio: "16 / 10",
+    teamSize: 2,
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
@@ -33,6 +33,7 @@ const projects = [
     desc: "A personal project for myself where I made a simple personal finance tracker that shows me where my money goes because I'm bad at keeping track of my expenses.",
     image: "/projects/ez-budgeting.png",
     imageRatio: "16 / 10",
+    teamSize: 1,
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
@@ -50,6 +51,7 @@ const projects = [
     desc: "A fun little project about gamified productivity tracker that transforms daily tasks into quest-based leveling. It bridges the gap between classic RPG mechanics and life organization.",
     image: "/projects/life-rpg.png",
     imageRatio: "16 / 10",
+    teamSize: 1,
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
@@ -67,6 +69,7 @@ const projects = [
     desc: "Hacktiv8 Project where I made a Pokemon database using PokeAPI (a public REST API) and have team building features, meta build recommendation from AI for competitive team building. Website is not available because we've stopped the backend server.",
     image: "/projects/no-photo.png",
     imageRatio: "16 / 10",
+    teamSize: 1,
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
@@ -87,7 +90,7 @@ const projects = [
       "JSX",
       "TailwindCSS",
       "REST API",
-      "Google Cloud Server"
+      "Google Cloud Server",
     ],
     keyFeatures: [
       "Google and github sign in",
@@ -102,6 +105,7 @@ const projects = [
     desc: "Hacktiv8 Project about an e-commerce app for staff to maintain stocks and sales. Website is not available because we've stopped the backend server.",
     image: "/projects/ukea.png",
     imageRatio: "16 / 10",
+    teamSize: 1,
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
@@ -125,7 +129,7 @@ const projects = [
       "TailwindCSS",
       "multer",
       "sweetalert2",
-      "Google Cloud Server"
+      "Google Cloud Server",
     ],
     keyFeatures: [
       "Admin and staffs validations and certain access",
@@ -139,27 +143,24 @@ const projects = [
     desc: "A fun personal project for myself when I discovered people were trying to make their own personal indie website and bring back the Y2K era.",
     image: "/projects/indie-website.png",
     imageRatio: "16 / 10",
+    teamSize: 1,
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
-    techStack: [
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Firebase"
-    ],
+    techStack: ["JavaScript", "HTML", "CSS", "Firebase"],
     keyFeatures: [
       "Guestbook that you can sign and other users can reply",
-      "Deployed using nekoweb hosting"
+      "Deployed using nekoweb hosting",
     ],
     liveUrl: "https://watisdis31.nekoweb.org",
     githubUrl: "https://github.com/watisdis31/personal-indie-website",
   },
   {
     title: "Social Media Website",
-    desc: "Hacktiv8 Group Project where we made a social media app similar to X and facebook.",
+    desc: "Hacktiv8 Group Project where we made a social media app similar to X and facebook. Website is not available because we've stopped the backend server.",
     image: "/projects/kitabmuka.png",
     imageRatio: "16 / 10",
+    teamSize: 3,
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
@@ -170,12 +171,12 @@ const projects = [
       "dotenv",
       "Sequelize",
       "PostgreSQL",
-      "nodemailer"
+      "nodemailer",
     ],
     keyFeatures: [
       "Features MVC architecture",
       "Admin dashboard",
-      "Communities on which users can join or create"
+      "Communities on which users can join or create",
     ],
     liveUrl: "",
     githubUrl: "https://github.com/watisdis31/fsjs-p1-pairprogram",
@@ -185,6 +186,7 @@ const projects = [
     desc: "Hacktiv8 Final Project where we made a web based application for people who are struggling with mental health, users can fill out the form we have and then based on the user's data, the app will recommend to them lots of psychiatrists that cater to their problems. ",
     image: "/projects/pendengarMu.png",
     imageRatio: "16 / 10",
+    teamSize: 6,
     imageFit: "contain",
     imagePosition: "center",
     imagePadding: "0.5rem",
@@ -200,15 +202,16 @@ const projects = [
       "Mongoose",
       "pusher",
       "Next Auth",
-      "REST API"
+      "REST API",
     ],
     keyFeatures: [
       "Real-time chat",
       "Video call with agora",
-      "Easy payment using Midtrans"
+      "Easy payment using Midtrans",
     ],
-    liveUrl: "",
-    githubUrl: "https://github.com/Final-Project-H8-FSJS-RMT-069-P3/pendengarMu",
+    liveUrl: "https://pendengarmu.vercel.app",
+    githubUrl:
+      "https://github.com/Final-Project-H8-FSJS-RMT-069-P3/pendengarMu",
   },
 ];
 
@@ -238,6 +241,28 @@ const skills = {
   ],
 };
 
+function ActionButton({
+  href,
+  className = "",
+  dark = false,
+  children,
+  ...props
+}) {
+  return (
+    <a
+      href={href}
+      className={`btn-link ${dark ? "btn-link--dark" : "btn-link--light"} ${className}`.trim()}
+      {...props}
+    >
+      <span className="btn-ripple v1" aria-hidden="true" />
+      <span className="btn-ripple v2" aria-hidden="true" />
+      <span className="btn-title">
+        <span className="btn-content">{children}</span>
+      </span>
+    </a>
+  );
+}
+
 export default function App() {
   const dispatch = useDispatch();
   const mobileMenuOpen = useSelector((state) => state.ui.mobileMenuOpen);
@@ -247,20 +272,23 @@ export default function App() {
   const backendSkills = skills?.backend ?? [];
 
   useEffect(() => {
-    const elements = document.querySelectorAll("[data-reveal]");
-    const observer = new IntersectionObserver(
+    const revealElements = document.querySelectorAll("[data-reveal]");
+    const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         });
       },
       { threshold: 0.12, rootMargin: "0px 0px -10% 0px" },
     );
 
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    revealElements.forEach((el) => revealObserver.observe(el));
+
+    return () => {
+      revealObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -272,7 +300,7 @@ export default function App() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-slate-600 transition hover:text-slate-900"
+                className="relative pb-1 text-sm font-medium text-slate-500 transition hover:text-slate-900 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-slate-900 after:transition-all after:duration-300 hover:after:w-full select-none"
               >
                 {item.label}
               </a>
@@ -282,7 +310,7 @@ export default function App() {
           <button
             type="button"
             onClick={() => dispatch(toggleMenu())}
-            className="absolute right-4 rounded-xl border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 md:hidden"
+            className="absolute right-4 rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 md:hidden select-none"
             aria-label="Toggle menu"
           >
             Menu
@@ -297,7 +325,7 @@ export default function App() {
                   key={item.href}
                   href={item.href}
                   onClick={() => dispatch(closeMenu())}
-                  className="py-2 text-sm font-medium text-slate-600 hover:text-slate-900"
+                  className="py-2 text-sm font-medium text-slate-500 transition hover:text-slate-900 select-none"
                 >
                   {item.label}
                 </a>
@@ -313,7 +341,7 @@ export default function App() {
             <p
               data-reveal
               style={{ "--reveal-delay": "20ms" }}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-black md:text-sm"
+              className="text-xs font-semibold uppercase tracking-[0.2em] text-black md:text-sm select-none"
             >
               Full-Stack Web Developer
             </p>
@@ -321,7 +349,7 @@ export default function App() {
             <h1
               data-reveal
               style={{ "--reveal-delay": "80ms", color: "#000000" }}
-              className="mt-3 text-3xl font-black leading-tight md:text-4xl"
+              className="mt-3 text-3xl font-black leading-tight md:text-4xl select-none"
             >
               Vincentius Edward
             </h1>
@@ -329,7 +357,7 @@ export default function App() {
             <p
               data-reveal
               style={{ "--reveal-delay": "140ms" }}
-              className="mt-1 text-sm font-medium text-black/70 md:text-base"
+              className="mt-1 text-sm font-medium text-black/70 md:text-base select-none"
             >
               Based in North Jakarta, Indonesia
             </p>
@@ -345,30 +373,29 @@ export default function App() {
               </p>
             </div>
 
-            <div
-              data-reveal
-              style={{ "--reveal-delay": "280ms" }}
-              className="mt-8 flex flex-wrap items-center justify-center gap-3"
-            >
-              <a
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+              <ActionButton
                 href="#projects"
-                className="lift-hover rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                dark
+                className="rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
               >
                 View Projects
-              </a>
-              <a
+              </ActionButton>
+
+              <ActionButton
                 href="/cv/Vincentius-Edward-CV.pdf"
                 download
-                className="lift-hover rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
               >
                 My CV
-              </a>
-              <a
+              </ActionButton>
+
+              <ActionButton
                 href="#contact"
-                className="lift-hover rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
               >
                 Contact Me
-              </a>
+              </ActionButton>
             </div>
           </div>
         </section>
@@ -378,89 +405,105 @@ export default function App() {
           className="scroll-mt-24 border-b border-slate-200/80"
         >
           <div className="mx-auto max-w-6xl px-4 py-14">
-            <h2
-              data-reveal
-              className="text-center text-2xl font-black md:text-3xl"
-              style={{ color: "#000000" }}
-            >
-              About
-            </h2>
-            <div
-              data-reveal
-              style={{ "--reveal-delay": "80ms" }}
-              className="mt-4 flex justify-center"
-            >
-              <p className="w-full max-w-3xl text-center leading-relaxed text-black/70 whitespace-normal wrap-break-word">
-                Hacktiv8 graduate and transitioning into web development,
-                seeking junior or entry-level full-stack roles. Background in
-                operations and team leadership with hands-on project experience
-                building web applications; strong problem-solving,
-                time-management, and communication skills. Fast learner who
-                collaborates well in teams, eager to contribute to user-centered
-                projects and continue growing under mentorship.
-              </p>
-            </div>
-          </div>
-        </section>
+            <div className="grid gap-10 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+              <div className="text-center md:text-left">
+                <h2
+                  data-reveal
+                  className="text-center text-2xl font-black md:text-left md:text-3xl select-none"
+                  style={{ color: "#000000" }}
+                >
+                  About
+                </h2>
+                <div
+                  data-reveal
+                  style={{ "--reveal-delay": "80ms" }}
+                  className="mt-4 flex justify-center md:justify-start"
+                >
+                  <div className="w-full max-w-3xl text-center text-black/70 md:text-left">
+                    <p className="mb-8 whitespace-normal wrap-break-word leading-8">
+                      I’m a Hacktiv8 graduate and aspiring full-stack developer
+                      with hands-on experience building web applications that
+                      focus on usability, performance, and clean structure. I
+                      enjoy turning ideas into practical, user-friendly products
+                      and I’m comfortable working across both frontend and
+                      backend tasks.
+                    </p>
+                    <br />
 
-        <section
-          id="skills"
-          className="scroll-mt-24 border-b border-slate-200/80"
-        >
-          <div className="mx-auto max-w-6xl px-4 py-14">
-            <h2
-              className="text-center text-2xl font-black md:text-3xl"
-              style={{ color: "#000000" }}
-            >
-              Skills
-            </h2>
-
-            <div className="mx-auto mt-8 max-w-4xl space-y-8">
-              <div>
-                <h3 className="text-center text-sm font-semibold uppercase tracking-[0.14em] text-black">
-                  Programming Languages
-                </h3>
-                <div className="mt-3 flex flex-wrap justify-center gap-2">
-                  {programmingLanguageSkills.map((skill) => (
-                    <span
-                      key={`lang-${skill}`}
-                      className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-black"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                    <p className="whitespace-normal wrap-break-word leading-8">
+                      Before moving into web development, I spent several years
+                      in the F&B management business and worked as an assistant
+                      operational manager. That experience helped me build a
+                      strong sense of responsibility, attention to detail, and
+                      the ability to work under pressure while keeping
+                      operations organized and efficient. It also strengthened
+                      my communication, teamwork, and problem-solving skills in
+                      a fast-paced environment.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div>
-                <h3 className="text-center text-sm font-semibold uppercase tracking-[0.14em] text-black">
-                  Frontend
-                </h3>
-                <div className="mt-3 flex flex-wrap justify-center gap-2">
-                  {frontendSkills.map((skill) => (
-                    <span
-                      key={`fe-${skill}`}
-                      className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-black"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="hidden md:flex md:items-stretch">
+                <div className="w-px self-stretch bg-slate-100/80" />
               </div>
 
-              <div>
-                <h3 className="text-center text-sm font-semibold uppercase tracking-[0.14em] text-black">
-                  Backend
-                </h3>
-                <div className="mt-3 flex flex-wrap justify-center gap-2">
-                  {backendSkills.map((skill) => (
-                    <span
-                      key={`be-${skill}`}
-                      className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-black"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+              <div className="text-center md:text-left">
+                <h2
+                  className="text-center text-2xl font-black md:text-left md:text-3xl select-none"
+                  style={{ color: "#000000" }}
+                >
+                  Skills
+                </h2>
+
+                <div className="mx-auto mt-8 max-w-4xl space-y-8 md:mx-0">
+                  <div>
+                    <h3 className="text-center text-sm font-semibold uppercase tracking-[0.14em] text-black md:text-left select-none">
+                      Programming Languages
+                    </h3>
+                    <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
+                      {programmingLanguageSkills.map((skill) => (
+                        <span
+                          key={`lang-${skill}`}
+                          className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-black select-none"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-center text-sm font-semibold uppercase tracking-[0.14em] text-black md:text-left select-none">
+                      Frontend
+                    </h3>
+                    <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
+                      {frontendSkills.map((skill) => (
+                        <span
+                          key={`fe-${skill}`}
+                          className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-black select-none"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-center text-sm font-semibold uppercase tracking-[0.14em] text-black md:text-left select-none">
+                      Backend
+                    </h3>
+                    <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
+                      {backendSkills.map((skill) => (
+                        <span
+                          key={`be-${skill}`}
+                          className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-black select-none"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -486,10 +529,10 @@ export default function App() {
                   key={project.title}
                   data-reveal
                   style={{ "--reveal-delay": `${index * 80}ms` }}
-                  className="project-card flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+                  className="project-card flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition"
                 >
                   <div
-                    className="aspect-16/10 w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100"
+                    className="overflow-hidden border-b border-slate-200 bg-slate-100"
                     style={{ aspectRatio: project.imageRatio ?? "16 / 10" }}
                   >
                     <img
@@ -501,7 +544,29 @@ export default function App() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-5">
-                    <h3 className="text-lg font-semibold text-black">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-2">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full border border-slate-300 bg-slate-50 text-[10px] font-semibold text-slate-600 select-none">
+                          {project.teamSize}
+                        </div>
+                        <span className="text-xs font-medium uppercase tracking-[0.16em] text-slate-500 select-none">
+                          {project.teamSize === 1
+                            ? "Solo Project"
+                            : "Team Project"}
+                        </span>
+                      </div>
+                      <span
+                        className={`rounded-full border px-2.5 py-1 text-[11px] font-medium select-none ${
+                          project.liveUrl
+                            ? "border-green-500 text-green-700 bg-green-50"
+                            : "border-red-500 text-red-700 bg-red-50"
+                        }`}
+                      >
+                        {project.liveUrl ? "Live" : "Offline"}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-3 text-lg font-semibold text-black select-none">
                       {project.title}
                     </h3>
 
@@ -517,7 +582,7 @@ export default function App() {
                         {(project.techStack ?? []).map((tech) => (
                           <span
                             key={`${project.title}-${tech}`}
-                            className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-black"
+                            className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-black select-none"
                           >
                             {tech}
                           </span>
@@ -542,17 +607,18 @@ export default function App() {
 
                     <div className="mt-auto flex flex-wrap gap-2 pt-5">
                       {project.liveUrl ? (
-                        <a
+                        <ActionButton
                           href={project.liveUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="lift-hover inline-flex items-center rounded-lg bg-red-600 px-3 py-2 text-xs font-semibold text-white hover:bg-red-700"
+                          dark
+                          className="rounded-full bg-red-600 px-3 py-2 text-xs font-semibold text-white hover:bg-red-700"
                         >
                           Live
-                        </a>
+                        </ActionButton>
                       ) : (
                         <span
-                          className="inline-flex items-center rounded-lg bg-slate-300 px-3 py-2 text-xs font-semibold text-slate-600"
+                          className="inline-flex items-center rounded-full bg-slate-300 px-3 py-2 text-xs font-semibold text-slate-600"
                           aria-disabled="true"
                         >
                           Live
@@ -560,17 +626,17 @@ export default function App() {
                       )}
 
                       {project.githubUrl ? (
-                        <a
+                        <ActionButton
                           href={project.githubUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="lift-hover inline-flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900"
+                          className="rounded-full border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900"
                         >
                           GitHub
-                        </a>
+                        </ActionButton>
                       ) : (
                         <span
-                          className="inline-flex items-center rounded-lg bg-slate-300 px-3 py-2 text-xs font-semibold text-slate-600"
+                          className="inline-flex items-center rounded-full bg-slate-300 px-3 py-2 text-xs font-semibold text-slate-600"
                           aria-disabled="true"
                         >
                           GitHub
@@ -600,36 +666,40 @@ export default function App() {
                 Open to internship and junior full-stack opportunities.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <a
+                <ActionButton
                   href="mailto:vincentiusedward31@gmail.com"
-                  className="lift-hover rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
+                  dark
+                  className="rounded-full bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                 >
                   vincentiusedward31@gmail.com
-                </a>
-                <a
+                </ActionButton>
+
+                <ActionButton
                   href="https://github.com/watisdis31"
                   target="_blank"
                   rel="noreferrer"
-                  className="lift-hover rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900"
+                  className="rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900"
                 >
                   GitHub
-                </a>
-                <a
+                </ActionButton>
+
+                <ActionButton
                   href="https://www.linkedin.com/in/vincentius-edward-8905509a/"
                   target="_blank"
                   rel="noreferrer"
-                  className="lift-hover rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900"
+                  className="rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900"
                 >
                   LinkedIn
-                </a>
-                <a
+                </ActionButton>
+
+                <ActionButton
                   href="https://id.jobstreet.com/profiles/vincentius-edward-0HHJD5sz33"
                   target="_blank"
                   rel="noreferrer"
-                  className="lift-hover rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900"
+                  className="rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:border-slate-900 hover:text-slate-900"
                 >
                   JobStreet
-                </a>
+                </ActionButton>
               </div>
             </div>
           </div>
@@ -637,7 +707,7 @@ export default function App() {
       </main>
 
       <footer className="border-t border-slate-200 py-6">
-        <p className="text-center text-sm text-slate-400">
+        <p className="text-center text-sm text-slate-400 select-none">
           © {new Date().getFullYear()} Vincentius Edward
         </p>
       </footer>
