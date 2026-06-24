@@ -216,7 +216,7 @@ const projects = [
 ];
 
 const skills = {
-  programmingLanguages: ["JavaScript", "TypeScript", "SQL", "Git"],
+  programmingLanguages: ["JavaScript", "TypeScript", "PHP", "SQL", "Git"],
   frontend: [
     "React.js",
     "Next.js",
@@ -232,7 +232,9 @@ const skills = {
     "Node.js",
     "Express",
     "Sequelize",
+    "Laravel",
     "PostgreSQL",
+    "MySQL",
     "MongoDB",
     "REST API",
     "Socket.IO",
