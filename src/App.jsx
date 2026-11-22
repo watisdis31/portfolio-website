@@ -766,6 +766,7 @@ export default function App() {
   const dispatch = useDispatch();
   const mobileMenuOpen = useSelector((state) => state.ui.mobileMenuOpen);
   const [activeSection, setActiveSection] = useState("home");
+  const [heroInView, setHeroInView] = useState(true);
 
   useEffect(() => {
     const revealElements = document.querySelectorAll("[data-reveal]");
@@ -803,6 +804,21 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    const hero = document.getElementById("home");
+    if (!hero) return undefined;
+
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        setHeroInView(entry.isIntersecting);
+      },
+      { threshold: 0, rootMargin: "-72px 0px 0px 0px" },
+    );
+
+    heroObserver.observe(hero);
+    return () => heroObserver.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (!mobileMenuOpen) return undefined;
     const handleKeyDown = (event) => {
       if (event.key === "Escape") dispatch(closeMenu());
@@ -827,8 +843,21 @@ export default function App() {
     <div className="min-h-screen bg-paper text-ink">
       <header className="header-reveal fixed inset-x-0 top-0 z-50 border-b border-rule bg-paper">
         <div className="page-shell flex h-[4.5rem] items-center justify-between">
-          <a href="#home" className="font-display text-xl tracking-[-0.03em] text-ink">
-            Vincentius Edward
+          <a
+            href="#home"
+            className={`site-logo${heroInView ? "" : " is-named"}`}
+            aria-label="Vincentius Edward, home"
+          >
+            <img
+              src="/mark.svg"
+              alt=""
+              width="40"
+              height="40"
+              className="site-logo__mark"
+            />
+            <span className="site-logo__name" aria-hidden="true">
+              Vincentius Edward
+            </span>
           </a>
 
           <nav className="hidden items-center gap-7 md:flex" aria-label="Main navigation">
