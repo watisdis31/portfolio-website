@@ -12,24 +12,20 @@ A responsive personal portfolio website built to showcase full-stack projects to
 
 ## Features
 
-- Clean, white, professional UI
-- Responsive layout for mobile, tablet, and desktop
-- Centered navbar with smooth section navigation
-- Hero section with role and location
+- Warm editorial UI with Fraunces and IBM Plex typography
+- Responsive layouts for mobile, tablet, and desktop
+- Sticky navigation with active section states and accessible mobile menu
+- Asymmetric hero with role, location, CTAs, and a dossier (background, availability)
 - Skills section grouped by category:
   - Programming Languages
   - Frontend
   - Backend
-- Project cards with:
-  - Project screenshot
-  - Description
-  - Tech stack tags
-  - Key features list
-  - **Live** button (red when available, gray when unavailable)
-  - **GitHub** button
+- Featured project showcases with responsive screenshots
+- Compact archive list for offline projects
+- Project descriptions, technology metadata, key features, live links, and GitHub links
 - Download CV button
-- Contact section with social links
-- Subtle animations and section divider lines
+- Contact section with email and social links
+- Subtle reveal, hover, and reduced-motion-aware interactions
 
 ## Project Structure
 
